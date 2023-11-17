@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from requests import Response
 from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView, DestroyAPIView
 from rest_framework.viewsets import ModelViewSet
@@ -11,7 +12,11 @@ from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 def index(request):
-    return HttpResponse("test")
+    return render(request, 'index.html', {})
+
+
+def about(request):
+    return render(request, 'about.html', {})
 
 
 @api_view()

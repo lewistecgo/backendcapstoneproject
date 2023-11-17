@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("menu/", views.MenuItemView.as_view()),
+    path("about/", views.about, name="about"),
+    path("menu/", views.MenuItemView.as_view(), name="menu"),
     path("menu/<int:pk>", views.SingleMenuItemView.as_view()),
     path("message/", views.msg),
     path("bookings/", views.BookingViewSet.as_view(
